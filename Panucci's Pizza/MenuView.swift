@@ -13,7 +13,7 @@ struct MenuView: View {
             PizzasView().tabItem { Text("Pizzas") }.tag(0)
             SidesView().tabItem { Text("Sides") }.tag(1)
             DrinksView().tabItem { Text("Drinks") }.tag(2)
-            CheckoutView().tabItem { Text("Checkout") }.tag(4)
+            CheckoutView().tabItem { Text("Checkout") }.tag(3)
         }
         .frame(minWidth: 800, maxWidth: .infinity, minHeight: 600, maxHeight: .infinity, alignment: .center)
     }

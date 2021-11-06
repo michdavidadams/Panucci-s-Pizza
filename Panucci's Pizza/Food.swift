@@ -8,6 +8,18 @@
 import Foundation
 
 // This is the food that will be displayed in the user interface
+// MARK: Build-A-Pizza
+public struct BuildAPizza: Identifiable {
+    let size: String
+    let toppings: [String]
+    let crust: String
+    public let id = UUID()
+}
+
+let sizeOptions = ["small", "medium", "large", "extraLarge"]
+let crustOptions = ["thin", "deep dish", "pan", "cheese-filled"]
+let toppingOptions = ["cheese", "pepperoni", "sausage", "ham", "olives", "mushrooms", "bell peppers", "pineapple", "nothing"]
+
 // MARK: Pizzas
 public struct Pizza: Identifiable {
     let name: String
@@ -15,7 +27,6 @@ public struct Pizza: Identifiable {
     let description: String
     let image: String
     public let id = UUID()
-    
 }
 
 let allPizzas = [
@@ -27,7 +38,7 @@ let allPizzas = [
 // MARK: Drinks
 public struct Drinks: Identifiable {
     let name: String
-    let price: Int
+    let prices: [Int] // In USD
     let description: String
     let image: String
     public let id = UUID()
@@ -35,11 +46,11 @@ public struct Drinks: Identifiable {
 }
 
 let allDrinks = [
-    Drinks(name: "Soda", price: 1, description: "The perfect complement to any pizza. So perfect, in fact, that we considered making it the only drink available.", image: "fresh-cola-drink-glass"),
-    Drinks(name: "Water", price: 1, description: "Like the water from your tap, only better!", image: "clear-glass-with-water"),
-    Drinks(name: "Sweet Tea", price: 1, description: "A Southern delicacy.", image: "refreshing-drink"),
-    Drinks(name: "Unsweet Tea", price: 1, description: "Like Sweet Tea, only worse!", image: "refreshing-drink"),
-    Drinks(name: "Lemonade", price: 1, description: "Tastes so good, you'll forget it's decaying your teeth.", image: "refreshing-drink-1")
+    Drinks(name: "Soda", prices: [1, 2, 3], description: "The perfect complement to any pizza. So perfect, in fact, that we considered making it the only drink available.", image: "fresh-cola-drink-glass"),
+    Drinks(name: "Water", prices: [1, 2, 3], description: "Like the water from your tap, only better!", image: "clear-glass-with-water"),
+    Drinks(name: "Sweet Tea", prices: [1, 2, 3], description: "A Southern delicacy.", image: "refreshing-drink"),
+    Drinks(name: "Unsweet Tea", prices: [1, 2, 3], description: "Like Sweet Tea, only worse!", image: "refreshing-drink"),
+    Drinks(name: "Lemonade", prices: [1, 2, 3], description: "Tastes so good, you'll forget it's decaying your teeth.", image: "refreshing-drink-1")
 ]
 
 // MARK: Sides

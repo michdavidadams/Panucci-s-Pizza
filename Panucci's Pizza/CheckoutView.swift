@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct CheckoutView: View {
+    // Payment and pickup methods
     @State var chosenPaymentMethod = customerOrder.payWithCash
     @State var chosenMethod = customerOrder.pickup
     
     // Customer information
-    //@State private var customerName: String
     @State var deliveryDetails: String = ""
     @State var paymentInformation: String = ""
     
@@ -23,9 +23,11 @@ struct CheckoutView: View {
                     .font(.title)
                     .padding()
                 Spacer()
-                Text("\(customerOrder.foodItem)")
-                    .font(.body)
-                    .padding()
+                ForEach(customerOrder.foodItem.indices) { index in
+                    Text("\(customerOrder.foodItem[index])")
+                        .font(.body)
+                        .padding()
+                }
             }
             Divider()
             VStack {

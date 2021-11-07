@@ -1,3 +1,3 @@
 # Panucci's Pizza
 A Pizza ordering system for a school project.
-!(Panucci's Pizza Logo.png)[pizza image]
+![Image of pizza](PanuccisPizza/Panucci's Pizza Logo.png)

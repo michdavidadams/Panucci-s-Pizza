@@ -3,11 +3,13 @@
 //  Panucci's Pizza
 //
 //  Created by Michael Adams on 11/4/21.
-//
+//  Build-A-Pizza screen
 
 import SwiftUI
 
 struct BuildAPizzaView: View {
+    
+    // Variables for build-a-pizza size, crust, and choice of 4 toppings
     @State var chosenSize = ""
     @State var chosenCrust = ""
     @State var chosenToppingOne = ""
@@ -22,6 +24,7 @@ struct BuildAPizzaView: View {
                     .font(.title)
                     .padding()
                 
+                // Picker for build-a-pizza size
                 Picker(selection: $chosenSize, label: Text("Choose size")) {
                     Text("Small").tag("small")
                     Text("Medium").tag("medium")
@@ -36,6 +39,8 @@ struct BuildAPizzaView: View {
                 Text("Toppings:")
                     .font(.title)
                     .padding()
+                
+                // Pickers for build-a-pizza choice of 4 toppings
                 VStack {
                     HStack {
                         Picker("Topping 1", selection: $chosenToppingOne) {
@@ -70,6 +75,7 @@ struct BuildAPizzaView: View {
                     .font(.title)
                     .padding()
                 
+                // Picker for build-a-pizza crust
                 Picker(selection: $chosenCrust, label: Text("Choose crust")) {
                     Text("Thin").tag("thin")
                     Text("Pan").tag("pan")
@@ -80,6 +86,8 @@ struct BuildAPizzaView: View {
                 .padding()
             }
             Divider()
+            
+            // Button that will create arrays of 4 chosen toppings and will create a Build-A-Pizza containing the array, along with the chosen crust and size
             Button(action: {
                 // Creates a custom pizza
                 let allChosenToppings = [chosenToppingOne, chosenToppingTwo, chosenToppingThree, chosenToppingFour]

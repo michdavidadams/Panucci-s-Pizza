@@ -3,12 +3,14 @@
 //  Panucci's Pizza
 //
 //  Created by Michael Adams on 10/31/21.
-//
+//  Menu screen
 
 import SwiftUI
 
 struct MenuView: View {
     var body: some View {
+        
+        // Tab view containing each menu section
         TabView {
             BuildAPizzaView().tabItem { Text("Build-A-Pizza") }.tag(0)
             PizzasView().tabItem { Text("Pizzas") }.tag(1)

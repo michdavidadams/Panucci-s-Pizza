@@ -7,21 +7,14 @@
 
 import Foundation
 
-// Customer class
-//class Customer {
-//    var fullName: String
-//    var deliveryDetails: String
-//    var paymentInformation: String
-//    var phoneNumber: String
-//    public let id = UUID()
-//
-//    init(fullName: String, deliveryDetails: String, paymentInformation: String, phoneNumber: String) {
-//        self.fullName = fullName
-//        self.deliveryDetails = deliveryDetails
-//        self.paymentInformation = paymentInformation
-//        self.phoneNumber = phoneNumber
-//    }
-//}
+// Customer information
+public struct Customer: Identifiable {
+    var fullName: String
+    var address: String
+    var paymentInformation: String
+    var phoneNumber: String
+    public let id = UUID()
+}
 
-// Default customer profile
-//var currentCustomer = Customer(fullName: "Philip J. Fry", deliveryDetails: "Applied Cryogenics", paymentInformation: "Cash", phoneNumber: "555-555-5555")
+// Customer profile for current user
+var currentCustomer = Customer(fullName: "Philip J. Fry", address: "Manhattan, Old New York", paymentInformation: "", phoneNumber: "555-555-5555")

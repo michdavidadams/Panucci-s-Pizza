@@ -14,8 +14,11 @@ struct CheckoutView: View {
     @State var chosenMethod = customerOrder.pickup
     
     // Customer information
-    @State var deliveryDetails: String = ""
-    @State var paymentInformation: String = ""
+    @State var deliveryDetails = ""
+    @State var paymentInformation = ""
+    
+    // Checks if order has been completed
+    @State var orderCompleted = false
     
     var body: some View {
         LazyVStack {
@@ -102,13 +105,19 @@ struct CheckoutView: View {
             }
             Divider()
             
-            // Button that will submit order to Panucci's Pizza
-            Button(action: {
-                print(customerOrder)
-            }) {
-                Text("Submit Order")
+            // If order has been completed, show order submitted view. Otherwise, show button
+            if orderCompleted {
+                OrderSubmittedView()
+            } else {
+                // Button that will submit order to Panucci's Pizza
+                Button(action: {
+                    print(customerOrder)
+                    orderCompleted = true
+                }) {
+                    Text("Submit Order")
+                }
+                .padding()
             }
-            .padding(.horizontal)
         }
     }
 }

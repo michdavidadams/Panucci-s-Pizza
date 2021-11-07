@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58533B3B2738807B0099F64F /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58533B3A2738807B0099F64F /* Food.swift */; };
 		589F550B272F129600808D4F /* Panucci_s_PizzaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589F550A272F129600808D4F /* Panucci_s_PizzaApp.swift */; };
 		589F550D272F129600808D4F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589F550C272F129600808D4F /* MainView.swift */; };
 		589F550F272F129800808D4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 589F550E272F129800808D4F /* Assets.xcassets */; };
@@ -17,13 +18,13 @@
 		589F5524272F2A3600808D4F /* DrinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589F5523272F2A3600808D4F /* DrinksView.swift */; };
 		589F5526272F2A4900808D4F /* SidesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589F5525272F2A4900808D4F /* SidesView.swift */; };
 		589F552A272F3CD800808D4F /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589F5529272F3CD800808D4F /* CheckoutView.swift */; };
-		589F5532272F463200808D4F /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589F5531272F463200808D4F /* Food.swift */; };
 		589F553427306F4B00808D4F /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589F553327306F4B00808D4F /* Order.swift */; };
 		589F55402731F8CC00808D4F /* CustomerInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589F553F2731F8CC00808D4F /* CustomerInformation.swift */; };
 		58B6BCAC2734791C004B335D /* BuildAPizzaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B6BCAB2734791C004B335D /* BuildAPizzaView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		58533B3A2738807B0099F64F /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		589F5507272F129600808D4F /* Panucci's Pizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Panucci's Pizza.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		589F550A272F129600808D4F /* Panucci_s_PizzaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panucci_s_PizzaApp.swift; sourceTree = "<group>"; };
 		589F550C272F129600808D4F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -36,7 +37,6 @@
 		589F5523272F2A3600808D4F /* DrinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksView.swift; sourceTree = "<group>"; };
 		589F5525272F2A4900808D4F /* SidesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidesView.swift; sourceTree = "<group>"; };
 		589F5529272F3CD800808D4F /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
-		589F5531272F463200808D4F /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		589F553327306F4B00808D4F /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		589F553F2731F8CC00808D4F /* CustomerInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerInformation.swift; sourceTree = "<group>"; };
 		58B6BCAB2734791C004B335D /* BuildAPizzaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildAPizzaView.swift; sourceTree = "<group>"; };
@@ -79,9 +79,9 @@
 				589F551D272F1A3800808D4F /* PizzasView.swift */,
 				589F5523272F2A3600808D4F /* DrinksView.swift */,
 				589F5525272F2A4900808D4F /* SidesView.swift */,
+				58533B3A2738807B0099F64F /* Food.swift */,
 				589F5529272F3CD800808D4F /* CheckoutView.swift */,
 				589F5521272F1D9D00808D4F /* AttributionsView.swift */,
-				589F5531272F463200808D4F /* Food.swift */,
 				589F553327306F4B00808D4F /* Order.swift */,
 				589F553F2731F8CC00808D4F /* CustomerInformation.swift */,
 				589F550E272F129800808D4F /* Assets.xcassets */,
@@ -174,9 +174,9 @@
 				589F553427306F4B00808D4F /* Order.swift in Sources */,
 				589F551C272F171D00808D4F /* MenuView.swift in Sources */,
 				589F5524272F2A3600808D4F /* DrinksView.swift in Sources */,
+				58533B3B2738807B0099F64F /* Food.swift in Sources */,
 				589F5526272F2A4900808D4F /* SidesView.swift in Sources */,
 				589F550D272F129600808D4F /* MainView.swift in Sources */,
-				589F5532272F463200808D4F /* Food.swift in Sources */,
 				589F55402731F8CC00808D4F /* CustomerInformation.swift in Sources */,
 				589F550B272F129600808D4F /* Panucci_s_PizzaApp.swift in Sources */,
 				58B6BCAC2734791C004B335D /* BuildAPizzaView.swift in Sources */,

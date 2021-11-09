@@ -25,18 +25,15 @@ struct PizzasView: View {
                             .fontWeight(.bold)
                             .lineLimit(2)
                             .frame(width: 100.0)
-                            .dynamicTypeSize(.large)
                             .multilineTextAlignment(.center)
                         
                         Text("$\(pizza.price) per pizza")
                             .fontWeight(.semibold)
-                            .dynamicTypeSize(.medium)
                     }
                     .padding(.horizontal)
                     
                     Text(pizza.description)
                         .fontWeight(.ultraLight)
-                        .dynamicTypeSize(.small)
                         .multilineTextAlignment(.leading)
                         .frame(width: 180.0)
                     

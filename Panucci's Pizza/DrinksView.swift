@@ -30,12 +30,10 @@ struct DrinksView: View {
                             Text(drink.name)
                                 .font(.title)
                                 .fontWeight(.bold)
-                                .dynamicTypeSize(.large)
                                 .multilineTextAlignment(.center)
                                 .padding(.bottom)
                             Text(drink.description)
                                 .fontWeight(.ultraLight)
-                                .dynamicTypeSize(.small)
                                 .multilineTextAlignment(.leading)
                             
                         }

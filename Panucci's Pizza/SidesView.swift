@@ -24,18 +24,16 @@ struct SidesView: View {
                             .fontWeight(.bold)
                             .lineLimit(2)
                             .frame(width: 100.0)
-                            .dynamicTypeSize(.large)
+                            //.dynamicTypeSize(.large)
                             .multilineTextAlignment(.center)
                         
                         Text("$\(side.price) per side")
                             .fontWeight(.semibold)
-                            .dynamicTypeSize(.medium)
                     }
                     .padding(.horizontal)
                     
                     Text(side.description)
                         .fontWeight(.ultraLight)
-                        .dynamicTypeSize(.small)
                         .multilineTextAlignment(.leading)
                         .frame(width: 180.0)
                     

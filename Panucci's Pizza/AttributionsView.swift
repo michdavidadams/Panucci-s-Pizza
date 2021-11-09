@@ -54,7 +54,7 @@ struct AttributionsView: View {
                         Link("Food photo created by mrblmoreno - www.freepik.com",
                              destination: URL(string: "https://www.freepik.com/photos/food")!)
                             .padding()
-                            .foregroundColor(.indigo)
+                            .foregroundColor(.purple)
                     }
                 }
             }

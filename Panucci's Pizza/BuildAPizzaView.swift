@@ -18,89 +18,108 @@ struct BuildAPizzaView: View {
     @State var chosenToppingFour = ""
     
     var body: some View {
-        LazyVStack {
-            HStack {
-                Text("Size:")
-                    .font(.title)
-                    .padding()
-                
-                // Picker for build-a-pizza size
-                Picker(selection: $chosenSize, label: Text("Choose size")) {
-                    Text("Small").tag("small")
-                    Text("Medium").tag("medium")
-                    Text("Large").tag("large")
-                    Text("Extra Large").tag("extra large")
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding()
-            }
-            Divider()
-            HStack {
-                Text("Toppings:")
-                    .font(.title)
-                    .padding()
-                
-                // Pickers for build-a-pizza choice of 4 toppings
-                VStack {
-                    HStack {
-                        Picker("Topping 1", selection: $chosenToppingOne) {
-                            ForEach(toppingOptions, id: \.self) { index in
-                                Text("\(index)").tag(index)
-                            }
-                        }
-                        Picker("Topping 3", selection: $chosenToppingThree) {
-                            ForEach(toppingOptions, id: \.self) { index in
-                                Text("\(index)").tag(index)
-                            }
-                        }
+        ScrollView {
+            LazyVStack {
+                HStack {
+                    Text("Size:")
+                        .font(.title)
+                        .padding()
+                    
+                    // Picker for build-a-pizza size
+                    Picker(selection: $chosenSize, label: Text("Choose size")) {
+                        Text("Small").tag("small")
+                        Text("Medium").tag("medium")
+                        Text("Large").tag("large")
+                        Text("Extra Large").tag("extra large")
                     }
-                    HStack {
-                        Picker("Topping 2", selection: $chosenToppingTwo) {
-                            ForEach(toppingOptions, id: \.self) { index in
-                                Text("\(index)").tag(index)
-                            }
-                        }
-                        Picker("Topping 4", selection: $chosenToppingFour) {
-                            ForEach(toppingOptions, id: \.self) { index in
-                                Text("\(index)").tag(index)
-                            }
-                        }
-                    }
-                }
-                .padding()
-            }
-            Divider()
-            HStack {
-                Text("Crust:")
-                    .font(.title)
+                    .pickerStyle(SegmentedPickerStyle())
                     .padding()
-                
-                // Picker for build-a-pizza crust
-                Picker(selection: $chosenCrust, label: Text("Choose crust")) {
-                    Text("Thin").tag("thin")
-                    Text("Pan").tag("pan")
-                    Text("Deep Dish").tag("deep dish")
-                    Text("Cheese-Filled").tag("cheese-filled")
                 }
-                .pickerStyle(SegmentedPickerStyle())
+                .padding()
+
+                Divider()
+                
+                HStack {
+                    Text("Toppings:")
+                        .font(.title)
+                        .padding()
+                    Spacer()
+                    
+                    // Pickers for build-a-pizza choice of 4 toppings
+                    VStack {
+                            Picker("Topping 1", selection: $chosenToppingOne) {
+                                ForEach(toppingOptions, id: \.self) { index in
+                                    Text("\(index)").tag(index)
+                                }
+                            }
+                            .padding(.horizontal)
+                            .frame(width: 230.0)
+                        
+                            Picker("Topping 2", selection: $chosenToppingTwo) {
+                                ForEach(toppingOptions, id: \.self) { index in
+                                    Text("\(index)").tag(index)
+                                }
+                            }
+                            .padding(.horizontal)
+                            .frame(width: 230.0)
+                        
+                        
+                            Picker("Topping 3", selection: $chosenToppingThree) {
+                                ForEach(toppingOptions, id: \.self) { index in
+                                    Text("\(index)").tag(index)
+                                }
+                            }
+                            .padding(.horizontal)
+                            .frame(width: 230.0)
+                        
+                            Picker("Topping 4", selection: $chosenToppingFour) {
+                                ForEach(toppingOptions, id: \.self) { index in
+                                    Text("\(index)").tag(index)
+                                }
+                            }
+                            .padding(.horizontal)
+                            .frame(width: 230.0)
+                        
+                    }
+                    .padding(.horizontal)
+                }
+                .padding()
+                
+                Divider()
+                
+                HStack {
+                    Text("Crust:")
+                        .font(.title)
+                        .padding()
+                    
+                    // Picker for build-a-pizza crust
+                    Picker(selection: $chosenCrust, label: Text("Choose crust")) {
+                        Text("Thin").tag("thin")
+                        Text("Pan").tag("pan")
+                        Text("Deep Dish").tag("deep dish")
+                        Text("Cheese-Filled").tag("cheese-filled")
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .padding()
+                }
+                .padding()
+                
+                Divider()
+                
+                // Button that will create arrays of 4 chosen toppings and will create a Build-A-Pizza containing the array, along with the chosen crust and size
+                Button(action: {
+                    // Creates a custom pizza
+                    let allChosenToppings = [chosenToppingOne, chosenToppingTwo, chosenToppingThree, chosenToppingFour]
+                    let customPizza = BuildAPizza(size: chosenSize, toppings: allChosenToppings, crust: chosenCrust)
+                    // Adds custom pizza to order
+                    updateBuildAPizzas(addedBuildAPizzaItem: customPizza)
+                    
+                }) {
+                    Text("Create Pizza")
+                }
                 .padding()
             }
-            Divider()
-            
-            // Button that will create arrays of 4 chosen toppings and will create a Build-A-Pizza containing the array, along with the chosen crust and size
-            Button(action: {
-                // Creates a custom pizza
-                let allChosenToppings = [chosenToppingOne, chosenToppingTwo, chosenToppingThree, chosenToppingFour]
-                let customPizza = BuildAPizza(size: chosenSize, toppings: allChosenToppings, crust: chosenCrust)
-                // Adds custom pizza to order
-                updateBuildAPizzas(addedBuildAPizzaItem: customPizza)
-                
-            }) {
-                Text("Create Pizza")
-            }
-            .padding()
         }
-        
     }
 }
 

@@ -18,7 +18,7 @@ struct MenuView: View {
             DrinksView().tabItem { Text("Drinks") }.tag(3)
             CheckoutView().tabItem { Text("Checkout") }.tag(4)
         }
-        .frame(minWidth: 800, maxWidth: .infinity, minHeight: 600, maxHeight: .infinity, alignment: .center)
+        .frame(minWidth: 800, maxWidth: .infinity, minHeight: 500, maxHeight: .infinity, alignment: .center)
     }
 }
 

@@ -50,11 +50,14 @@ struct MainView: View {
                     }) {
                         Text("Log In")
                     }
+                    .padding()
                     .frame(alignment: .center)
                 }
                 .padding()
                 .frame(alignment: .center)
             }
+            .padding()
+            .frame(minWidth: 100, minHeight: 100, alignment: .center)
         }
     }
 }

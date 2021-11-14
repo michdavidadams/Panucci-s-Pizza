@@ -77,12 +77,12 @@
 				589F550A272F129600808D4F /* Panucci_s_PizzaApp.swift */,
 				589F550C272F129600808D4F /* MainView.swift */,
 				589F551B272F171D00808D4F /* MenuView.swift */,
-				58533B3C273881600099F64F /* OrderSubmittedView.swift */,
 				58B6BCAB2734791C004B335D /* BuildAPizzaView.swift */,
 				589F551D272F1A3800808D4F /* PizzasView.swift */,
-				589F5523272F2A3600808D4F /* DrinksView.swift */,
 				589F5525272F2A4900808D4F /* SidesView.swift */,
+				589F5523272F2A3600808D4F /* DrinksView.swift */,
 				589F5529272F3CD800808D4F /* CheckoutView.swift */,
+				58533B3C273881600099F64F /* OrderSubmittedView.swift */,
 				589F5521272F1D9D00808D4F /* AttributionsView.swift */,
 				58533B3A2738807B0099F64F /* Food.swift */,
 				589F553327306F4B00808D4F /* Order.swift */,
@@ -118,6 +118,8 @@
 			dependencies = (
 			);
 			name = "Panucci's Pizza";
+			packageProductDependencies = (
+			);
 			productName = "Panucci's Pizza";
 			productReference = 589F5507272F129600808D4F /* Panucci's Pizza.app */;
 			productType = "com.apple.product-type.application";
@@ -146,6 +148,8 @@
 				Base,
 			);
 			mainGroup = 589F54FE272F129600808D4F;
+			packageReferences = (
+			);
 			productRefGroup = 589F5508272F129600808D4F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

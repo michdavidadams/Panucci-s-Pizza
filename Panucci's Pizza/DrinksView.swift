@@ -52,7 +52,7 @@ struct DrinksView: View {
                             
                             Button(action: {
                                 print("\(drink.name) added to order.")
-                                updateDrinks(addedDrink: drink, drinkSize: "\(drinkSize)")
+                                addToOrder(drink, "\(drinkSize)")
                             }) {
                                 Text("Add to order")
                             }

@@ -110,9 +110,9 @@ struct BuildAPizzaView: View {
                 Button(action: {
                     // Creates a custom pizza
                     let allChosenToppings = [chosenToppingOne, chosenToppingTwo, chosenToppingThree, chosenToppingFour]
-                    let customPizza = BuildAPizza(size: chosenSize, toppings: allChosenToppings, crust: chosenCrust)
+                    let customPizza = BuildAPizza(size: chosenSize, toppings: allChosenToppings, crust: chosenCrust, price: 0)
                     // Adds custom pizza to order
-                    updateBuildAPizzas(addedBuildAPizzaItem: customPizza)
+                    addToOrder(addedItem: customPizza, addedPrice: 0)
                     
                 }) {
                     Text("Create Pizza")

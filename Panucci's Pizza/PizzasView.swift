@@ -28,7 +28,11 @@ struct PizzasView: View {
                                 .frame(width: 100.0)
                                 .multilineTextAlignment(.center)
                             
-                            Text("$\(pizza.price) per pizza")
+                            Text("Small: $\(pizza.price)")
+                                .fontWeight(.semibold)
+                            Text("Medium: $\(pizza.price * 2)")
+                                .fontWeight(.semibold)
+                            Text("Large: $\(pizza.price * 3)")
                                 .fontWeight(.semibold)
                         }
                         .padding(.horizontal)
@@ -37,10 +41,14 @@ struct PizzasView: View {
                             .fontWeight(.ultraLight)
                             .multilineTextAlignment(.leading)
                             .frame(width: 180.0)
-                        
+                        Picker(selection: pizza.price, label: Text("Select size")) {
+                            Text("Small").tag(1)
+                            Text("Medium").tag(2)
+                            Text("Large").tag(3)
+                        }
                         Button(action: {
                             print("\(pizza.name) added to order. ")
-                            updatePizzas(addedPizza: pizza)
+                            addToOrder(addedItem: pizza, addedPrice: 0)
                         }) {
                             Text("Add to order")
                         }

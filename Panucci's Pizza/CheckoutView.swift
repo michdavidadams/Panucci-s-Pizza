@@ -20,6 +20,9 @@ struct CheckoutView: View {
     // Checks if order has been completed
     @State var orderCompleted = false
     
+    // Customer ordered items
+    @State var orderItems = customerOrder.addedItems
+    
     var body: some View {
         ScrollView {
             LazyVStack {
@@ -30,10 +33,24 @@ struct CheckoutView: View {
                         .font(.title)
                         .padding()
                     Spacer()
-                    ForEach(customerOrder.foodItem.indices) { index in
-                        Text("\(customerOrder.foodItem[index])")
-                            .font(.body)
-                            .padding()
+                    ForEach(orderItems.indices) { index in
+                        if orderItems[index] is BuildAPizza {
+                            String((orderItems[index] as! BuildAPizza).name)
+                                .font(.body)
+                                .padding()
+                        } else if orderItems[index] is Pizza {
+                            String((orderItems[index] as! Pizza).name)
+                                // .font(.body)
+                                .padding()
+                        } else if orderItems[index] is Sides {
+                            Text("\(orderItems[index])")
+                                .font(.body)
+                                .padding()
+                        } else if orderItems[index] is Drinks {
+                            
+                        } else {
+                        }
+                        
                     }
                 }
                 Divider()

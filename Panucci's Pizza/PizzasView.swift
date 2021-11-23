@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PizzasView: View {
+    @State var chosenPrice = 0
     
     var body: some View {
         ScrollView {
@@ -27,13 +28,18 @@ struct PizzasView: View {
                                 .lineLimit(2)
                                 .frame(width: 100.0)
                                 .multilineTextAlignment(.center)
-                            
-                            Text("Small: $\(pizza.price)")
-                                .fontWeight(.semibold)
-                            Text("Medium: $\(pizza.price * 2)")
-                                .fontWeight(.semibold)
-                            Text("Large: $\(pizza.price * 3)")
-                                .fontWeight(.semibold)
+                            VStack(alignment: .center) {
+                                ForEach(pizza.prices.keys.sorted(), id: \.self) { key in
+                                    HStack {
+                                        Text("\(key):")
+                                            .fontWeight(.light)
+                                            .multilineTextAlignment(.leading)
+                                        Text("$\(pizza.prices[key] ?? 0)")
+                                            .fontWeight(.light)
+                                            .multilineTextAlignment(.trailing)
+                                    }
+                                }
+                            }
                         }
                         .padding(.horizontal)
                         
@@ -41,16 +47,21 @@ struct PizzasView: View {
                             .fontWeight(.ultraLight)
                             .multilineTextAlignment(.leading)
                             .frame(width: 180.0)
-                        Picker(selection: pizza.price, label: Text("Select size")) {
-                            Text("Small").tag(1)
-                            Text("Medium").tag(2)
-                            Text("Large").tag(3)
-                        }
-                        Button(action: {
-                            print("\(pizza.name) added to order. ")
-                            addToOrder(addedItem: pizza, addedPrice: 0)
-                        }) {
-                            Text("Add to order")
+                        
+                        VStack(alignment: .trailing) {
+                            Picker(selection: $chosenPrice, label: Text("Select size")) {
+                                ForEach(pizza.prices.keys.sorted(), id: \.self) { key in
+                                    Text("\(key)").tag(key)
+                                }
+                            }
+                            .frame(width: 165.0)
+                            Button(action: {
+                                print("\(pizza.name) added to order. ")
+                                let addedPizza = OrderItem(type: .pizza, price: 0, details: "\(chosenPrice)")
+                                addToOrder(addedItem: addedPizza)
+                            }) {
+                                Text("Add to order")
+                            }
                         }
                         .padding()
                         

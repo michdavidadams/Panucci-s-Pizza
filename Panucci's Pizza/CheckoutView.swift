@@ -33,25 +33,13 @@ struct CheckoutView: View {
                         .font(.title)
                         .padding()
                     Spacer()
-                    ForEach(orderItems.indices) { index in
-                        if orderItems[index] is BuildAPizza {
-                            String((orderItems[index] as! BuildAPizza).name)
-                                .font(.body)
-                                .padding()
-                        } else if orderItems[index] is Pizza {
-                            String((orderItems[index] as! Pizza).name)
-                                // .font(.body)
-                                .padding()
-                        } else if orderItems[index] is Sides {
-                            Text("\(orderItems[index])")
-                                .font(.body)
-                                .padding()
-                        } else if orderItems[index] is Drinks {
-                            
-                        } else {
-                        }
-                        
-                    }
+                    
+//                    ForEach(orderItems!, id: \.self) { item in
+//                        HStack {
+//                            Text("\(String(describing: item.type) ?? ""): \(String(describing: item.details) ?? "")")
+//                            //Text("\(String(describing: item.price))")
+//                        }
+//                    }
                 }
                 Divider()
                 

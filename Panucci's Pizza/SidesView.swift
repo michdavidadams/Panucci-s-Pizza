@@ -40,7 +40,8 @@ struct SidesView: View {
                         
                         Button(action: {
                             print("\(side.name) added to order. ")
-                            addToOrder(addedItem: side, addedPrice: 0)
+                            let addedSide = OrderItem(type: .side, price: side.price, details: side.name)
+                            addToOrder(addedItem: addedSide)
                         }) {
                             Text("Add to order")
                         }

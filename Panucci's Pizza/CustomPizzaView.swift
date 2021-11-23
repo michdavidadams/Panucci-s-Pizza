@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BuildAPizzaView: View {
+struct CustomPizzaView: View {
     
     // Variables for build-a-pizza size, crust, and choice of 4 toppings
     @State var chosenSize = ""
@@ -110,9 +110,9 @@ struct BuildAPizzaView: View {
                 Button(action: {
                     // Creates a custom pizza
                     let allChosenToppings = [chosenToppingOne, chosenToppingTwo, chosenToppingThree, chosenToppingFour]
-                    let customPizza = BuildAPizza(size: chosenSize, toppings: allChosenToppings, crust: chosenCrust, price: 0)
+                    let customPizza = OrderItem(type: .customPizza, price: 0, details: "Size: \(chosenSize), Crust: \(chosenCrust), Toppings: \(allChosenToppings)")
                     // Adds custom pizza to order
-                    addToOrder(addedItem: customPizza, addedPrice: 0)
+                    addToOrder(addedItem: customPizza)
                     
                 }) {
                     Text("Create Pizza")
@@ -125,6 +125,6 @@ struct BuildAPizzaView: View {
 
 struct BuildAPizzaView_Previews: PreviewProvider {
     static var previews: some View {
-        BuildAPizzaView()
+        CustomPizzaView()
     }
 }

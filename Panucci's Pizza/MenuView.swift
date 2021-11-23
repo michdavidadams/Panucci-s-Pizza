@@ -12,7 +12,7 @@ struct MenuView: View {
         
         // Tab view containing each menu section
         TabView {
-            BuildAPizzaView().tabItem { Text("Build-A-Pizza") }.tag(0)
+            CustomPizzaView().tabItem { Text("Build-A-Pizza") }.tag(0)
             PizzasView().tabItem { Text("Pizzas") }.tag(1)
             SidesView().tabItem { Text("Sides") }.tag(2)
             DrinksView().tabItem { Text("Drinks") }.tag(3)

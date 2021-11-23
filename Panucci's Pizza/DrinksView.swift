@@ -8,16 +8,11 @@
 import SwiftUI
 
 struct DrinksView: View {
-    // Drink size
-    @State var drinkSize = "small"
+    @State var chosenPrice = 0
     
     var body: some View {
-        
-        // View that allows vertical scrolling through all drinks
         ScrollView {
             LazyVStack {
-                
-                // ForEach for all available drinks
                 ForEach(allDrinks) { drink in
                     HStack {
                         Image(drink.image)
@@ -26,39 +21,50 @@ struct DrinksView: View {
                             .clipShape(Circle())
                             .frame(width: 100, height: 100)
                             .padding()
-                        VStack {
-                            Text(drink.name)
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .multilineTextAlignment(.center)
-                                .padding(.bottom)
-                            Text(drink.description)
-                                .fontWeight(.ultraLight)
-                                .multilineTextAlignment(.leading)
-                            
-                        }
-                        .padding(.horizontal)
-                        .frame(width: 300.0)
                         
                         VStack {
-                            Picker(selection: $drinkSize, label: Text("Size")) {
-                                Text("small: $\(drink.prices[0])").tag("small")
-                                Text("medium: $\(drink.prices[1])").tag("medium")
-                                Text("large: $\(drink.prices[2])").tag("large")
+                            Text(drink.name)
+                                .fontWeight(.bold)
+                                .lineLimit(2)
+                                .frame(width: 100.0)
+                                .multilineTextAlignment(.center)
+                            VStack(alignment: .center) {
+                                ForEach(drink.prices.keys.sorted(), id: \.self) { key in
+                                    HStack {
+                                        Text("\(key):")
+                                            .fontWeight(.light)
+                                            .multilineTextAlignment(.leading)
+                                        Text("$\(drink.prices[key] ?? 0)")
+                                            .fontWeight(.light)
+                                            .multilineTextAlignment(.trailing)
+                                    }
+                                }
                             }
-                            .padding()
-                            .frame(width: 160.0)
-                            
-                            
+                        }
+                        .padding(.horizontal)
+                        
+                        Text(drink.description)
+                            .fontWeight(.ultraLight)
+                            .multilineTextAlignment(.leading)
+                            .frame(width: 180.0)
+                        
+                        VStack(alignment: .trailing) {
+                            Picker(selection: $chosenPrice, label: Text("Select size")) {
+                                ForEach(drink.prices.keys.sorted(), id: \.self) { key in
+                                    Text("\(key)").tag(key)
+                                }
+                            }
+                            .frame(width: 165.0)
                             Button(action: {
-                                print("\(drink.name) added to order.")
-                                addToOrder(drink, "\(drinkSize)")
+                                print("\(drink.name) added to order. ")
+                                let addedDrink = OrderItem(type: .drink, price: 0, details: "\(chosenPrice)")
+                                addToOrder(addedItem: addedDrink)
                             }) {
                                 Text("Add to order")
                             }
-                            .padding()
                         }
-                        .padding(.leading)
+                        .padding()
+                        
                     }
                     Divider()
                 }

@@ -14,6 +14,7 @@ enum FoodType {
     case side
     case drink
 }
+
 // Order item
 public struct OrderItem: Identifiable, Hashable {
     var type: FoodType
@@ -21,7 +22,6 @@ public struct OrderItem: Identifiable, Hashable {
     var details: String
     public let id = UUID()
 }
-
 
 // This is where the user's order will be created and stored
 // Order struct

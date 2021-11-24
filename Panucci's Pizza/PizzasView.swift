@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct PizzasView: View {
-    @State var chosenPrice = 0
+    
+    // Default chosen pizza size
+    @State var chosenSize = "small"
     
     var body: some View {
         ScrollView {
@@ -49,7 +51,7 @@ struct PizzasView: View {
                             .frame(width: 180.0)
                         
                         VStack(alignment: .trailing) {
-                            Picker(selection: $chosenPrice, label: Text("Select size")) {
+                            Picker(selection: $chosenSize, label: Text("Select size")) {
                                 ForEach(pizza.prices.keys.sorted(), id: \.self) { key in
                                     Text("\(key)").tag(key)
                                 }
@@ -57,7 +59,7 @@ struct PizzasView: View {
                             .frame(width: 165.0)
                             Button(action: {
                                 print("\(pizza.name) added to order. ")
-                                let addedPizza = OrderItem(type: .pizza, price: 0, details: "\(chosenPrice)")
+                                let addedPizza = OrderItem(type: .pizza, price: 0, details: "\(chosenSize)")
                                 addToOrder(addedItem: addedPizza)
                             }) {
                                 Text("Add to order")

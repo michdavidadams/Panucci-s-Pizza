@@ -123,7 +123,7 @@ struct CustomPizzaView: View {
     }
 }
 
-struct BuildAPizzaView_Previews: PreviewProvider {
+struct CustomPizzaView_Previews: PreviewProvider {
     static var previews: some View {
         CustomPizzaView()
     }

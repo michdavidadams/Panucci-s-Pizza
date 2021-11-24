@@ -30,7 +30,7 @@ let allPizzas = [
 // MARK: - Drinks
 public struct Drinks: Identifiable, Hashable {
     let name: String
-    let prices: [Int: Int]  // [fl Oz: USD]
+    let prices: [Int: Int]  // [fl oz: USD]
     let description: String
     let image: String
     public let id = UUID()

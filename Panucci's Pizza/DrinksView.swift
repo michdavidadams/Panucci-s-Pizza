@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DrinksView: View {
-    @State var chosenPrice = 0
+    @State var chosenPrice = 12
     
     var body: some View {
         ScrollView {
@@ -31,7 +31,7 @@ struct DrinksView: View {
                             VStack(alignment: .center) {
                                 ForEach(drink.prices.keys.sorted(), id: \.self) { key in
                                     HStack {
-                                        Text("\(key):")
+                                        Text("\(key) oz:")
                                             .fontWeight(.light)
                                             .multilineTextAlignment(.leading)
                                         Text("$\(drink.prices[key] ?? 0)")

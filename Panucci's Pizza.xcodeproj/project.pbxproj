@@ -22,6 +22,7 @@
 		589F553427306F4B00808D4F /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589F553327306F4B00808D4F /* Order.swift */; };
 		589F55402731F8CC00808D4F /* CustomerInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589F553F2731F8CC00808D4F /* CustomerInformation.swift */; };
 		58B6BCAC2734791C004B335D /* CustomPizzaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B6BCAB2734791C004B335D /* CustomPizzaView.swift */; };
+		58FA099D27507EC300BADF1F /* OrderItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FA099C27507EC300BADF1F /* OrderItemViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		589F553327306F4B00808D4F /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		589F553F2731F8CC00808D4F /* CustomerInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerInformation.swift; sourceTree = "<group>"; };
 		58B6BCAB2734791C004B335D /* CustomPizzaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPizzaView.swift; sourceTree = "<group>"; };
+		58FA099C27507EC300BADF1F /* OrderItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItemViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,9 +86,7 @@
 				589F5529272F3CD800808D4F /* CheckoutView.swift */,
 				58533B3C273881600099F64F /* OrderSubmittedView.swift */,
 				589F5521272F1D9D00808D4F /* AttributionsView.swift */,
-				58533B3A2738807B0099F64F /* Food.swift */,
-				589F553327306F4B00808D4F /* Order.swift */,
-				589F553F2731F8CC00808D4F /* CustomerInformation.swift */,
+				58FA099B27507E6900BADF1F /* Data */,
 				589F550E272F129800808D4F /* Assets.xcassets */,
 				589F5513272F129800808D4F /* Panucci_s_Pizza.entitlements */,
 				589F5510272F129800808D4F /* Preview Content */,
@@ -100,6 +100,17 @@
 				589F5511272F129800808D4F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		58FA099B27507E6900BADF1F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				589F553F2731F8CC00808D4F /* CustomerInformation.swift */,
+				58533B3A2738807B0099F64F /* Food.swift */,
+				589F553327306F4B00808D4F /* Order.swift */,
+				58FA099C27507EC300BADF1F /* OrderItemViewModel.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +193,7 @@
 				589F551C272F171D00808D4F /* MenuView.swift in Sources */,
 				589F5524272F2A3600808D4F /* DrinksView.swift in Sources */,
 				58533B3B2738807B0099F64F /* Food.swift in Sources */,
+				58FA099D27507EC300BADF1F /* OrderItemViewModel.swift in Sources */,
 				589F5526272F2A4900808D4F /* SidesView.swift in Sources */,
 				589F550D272F129600808D4F /* MainView.swift in Sources */,
 				589F55402731F8CC00808D4F /* CustomerInformation.swift in Sources */,

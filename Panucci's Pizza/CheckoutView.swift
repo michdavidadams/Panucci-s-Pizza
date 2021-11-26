@@ -27,13 +27,14 @@ struct CheckoutView: View {
                     
                     // List of items the user is purchasing
                     HStack {
+                        OrderItemView(order: customerOrder)
                         Text("Items: ")
                             .font(.title)
                             .padding()
                         Spacer()
                         ForEach(customerOrder.addedItems.indices, id: \.self) { index in
                             HStack {
-                                Text("\(String(describing: customerOrder.addedItems[index]!.type)): $\(String(describing: customerOrder.addedItems[index]!.price)), \(String(describing: customerOrder.addedItems[index]!.details))")
+                                Text("\(String(describing: customerOrder.addedItems[index]!.details)): $\(String(describing: customerOrder.addedItems[index]!.price))")
                                     .padding()
                             }
                         }
@@ -120,17 +121,19 @@ struct CheckoutView: View {
                 }
             } else {
                 ZStack {
-                    Circle()
-                        .fill(Color.red)
-                        .frame(width: 12, height: 12)
-                        .modifier(ParticlesModifier())
-                        .offset(x: -100, y : -50)
                     OrderSubmittedView()
-                    Circle()
-                        .fill(Color.orange)
-                        .frame(width: 12, height: 12)
-                        .modifier(ParticlesModifier())
-                        .offset(x: 60, y : 70)
+                    ZStack {
+                        Circle()
+                            .fill(Color.red)
+                            .frame(width: 12, height: 12)
+                            .modifier(ParticlesModifier())
+                            .offset(x: -100, y : -50)
+                        Circle()
+                            .fill(Color.orange)
+                            .frame(width: 12, height: 12)
+                            .modifier(ParticlesModifier())
+                            .offset(x: 60, y : 70)
+                    }
                 }
             }
         }
@@ -143,7 +146,7 @@ struct CheckoutView_Previews: PreviewProvider {
     }
 }
 
-// Confetti for when order is completed
+// MARK: - Confetti for when order is completed
 struct FireworkParticlesGeometryEffect : GeometryEffect {
     var time : Double
     var speed = Double.random(in: 20 ... 200)

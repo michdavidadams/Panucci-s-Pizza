@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 // MARK: - Custom Pizza Options
 let sizeOptions = ["small", "medium", "large", "extraLarge"]

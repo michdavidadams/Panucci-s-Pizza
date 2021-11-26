@@ -36,7 +36,9 @@ struct MainView: View {
                     TextField("Full Name", text: $fullName)
                         .frame(width: 150, alignment: .center)
                         .textFieldStyle(.roundedBorder)
-                    
+                        .toolbar {
+                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Placeholder")/*@END_MENU_TOKEN@*/
+                        }
                     // Text field for the user to enter their phone number
                     TextField("Phone Number", text: $phoneNumber)
                         .frame(width: 150, alignment: .center)

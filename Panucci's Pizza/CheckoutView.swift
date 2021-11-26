@@ -27,15 +27,14 @@ struct CheckoutView: View {
                     
                     // List of items the user is purchasing
                     HStack {
-                        OrderItemView(order: customerOrder)
                         Text("Items: ")
                             .font(.title)
                             .padding()
                         Spacer()
-                        ForEach(customerOrder.addedItems.indices, id: \.self) { index in
-                            HStack {
+                        VStack {
+                            Spacer()
+                            ForEach(customerOrder.addedItems.indices, id: \.self) { index in
                                 Text("\(String(describing: customerOrder.addedItems[index]!.details)): $\(String(describing: customerOrder.addedItems[index]!.price))")
-                                    .padding()
                             }
                         }
                         
@@ -120,6 +119,7 @@ struct CheckoutView: View {
                     .padding()
                 }
             } else {
+                Spacer()
                 ZStack {
                     OrderSubmittedView()
                     ZStack {
@@ -135,6 +135,7 @@ struct CheckoutView: View {
                             .offset(x: 60, y : 70)
                     }
                 }
+                .padding()
             }
         }
     }

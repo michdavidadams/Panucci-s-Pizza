@@ -35,9 +35,23 @@ struct CustomPizzaView: View {
                     .pickerStyle(SegmentedPickerStyle())
                     .padding()
                 }
-                .padding()
-
+                .padding([.top, .leading, .trailing])
+                HStack {
+                    // Prices per size
+                    ForEach(sizeOptions.keys.sorted(), id: \.self) { key in
+                        HStack {
+                            Text("\(key):")
+                                .fontWeight(.light)
+                                .multilineTextAlignment(.leading)
+                            Text("$\(sizeOptions[key] ?? 0)")
+                                .fontWeight(.light)
+                                .multilineTextAlignment(.trailing)
+                        }
+                    }
+                }
+                
                 Divider()
+                    .padding(.bottom)
                 
                 HStack {
                     Text("Toppings:")
@@ -47,38 +61,38 @@ struct CustomPizzaView: View {
                     
                     // Pickers for build-a-pizza choice of 4 toppings
                     VStack {
-                            Picker("Topping 1", selection: $chosenToppingOne) {
-                                ForEach(toppingOptions, id: \.self) { index in
-                                    Text("\(index)").tag(index)
-                                }
+                        Picker("Topping 1", selection: $chosenToppingOne) {
+                            ForEach(toppingOptions, id: \.self) { index in
+                                Text("\(index)").tag(index)
                             }
-                            .padding(.horizontal)
-                            .frame(width: 230.0)
+                        }
+                        .padding(.horizontal)
+                        .frame(width: 230.0)
                         
-                            Picker("Topping 2", selection: $chosenToppingTwo) {
-                                ForEach(toppingOptions, id: \.self) { index in
-                                    Text("\(index)").tag(index)
-                                }
+                        Picker("Topping 2", selection: $chosenToppingTwo) {
+                            ForEach(toppingOptions, id: \.self) { index in
+                                Text("\(index)").tag(index)
                             }
-                            .padding(.horizontal)
-                            .frame(width: 230.0)
+                        }
+                        .padding(.horizontal)
+                        .frame(width: 230.0)
                         
                         
-                            Picker("Topping 3", selection: $chosenToppingThree) {
-                                ForEach(toppingOptions, id: \.self) { index in
-                                    Text("\(index)").tag(index)
-                                }
+                        Picker("Topping 3", selection: $chosenToppingThree) {
+                            ForEach(toppingOptions, id: \.self) { index in
+                                Text("\(index)").tag(index)
                             }
-                            .padding(.horizontal)
-                            .frame(width: 230.0)
+                        }
+                        .padding(.horizontal)
+                        .frame(width: 230.0)
                         
-                            Picker("Topping 4", selection: $chosenToppingFour) {
-                                ForEach(toppingOptions, id: \.self) { index in
-                                    Text("\(index)").tag(index)
-                                }
+                        Picker("Topping 4", selection: $chosenToppingFour) {
+                            ForEach(toppingOptions, id: \.self) { index in
+                                Text("\(index)").tag(index)
                             }
-                            .padding(.horizontal)
-                            .frame(width: 230.0)
+                        }
+                        .padding(.horizontal)
+                        .frame(width: 230.0)
                         
                     }
                     .padding(.horizontal)
@@ -110,7 +124,7 @@ struct CustomPizzaView: View {
                 Button(action: {
                     // Creates a custom pizza
                     let allChosenToppings = [chosenToppingOne, chosenToppingTwo, chosenToppingThree, chosenToppingFour]
-                    let customPizza = OrderItem(type: .customPizza, price: 0, details: "Size: \(chosenSize), Crust: \(chosenCrust), Toppings: \(allChosenToppings)")
+                    let customPizza = OrderItem(type: .customPizza, price: sizeOptions[chosenSize] ?? 8, details: "Size: \(chosenSize), Crust: \(chosenCrust), Toppings: \(allChosenToppings)")
                     // Adds custom pizza to order
                     addToOrder(addedItem: customPizza)
                     

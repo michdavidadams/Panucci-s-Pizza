@@ -9,27 +9,27 @@ import SwiftUI
 
 struct OrderSubmittedView: View {
     
-    // Will track if button was pushed
-    @State var buttonPressed = false
+    @State var attributionsPopover = false
     
     var body: some View {
         VStack {
             Text("Thanks for ordering!")
-                .font(.title)
+                .font(.largeTitle)
                 .padding()
-            Image(systemName: "hands.sparkles")
-                .font(.system(size: 30))
-            if buttonPressed {
-                AttributionsView()
-            } else {
+            ZStack {
                 Button(action: {
-                    buttonPressed = true
+                    self.attributionsPopover = true
                 }) {
-                    Text("Attributions")
+                    Image(systemName: "hand.thumbsup")
                 }
-                .padding()
+                .frame(width: 35.0, height: 35.0)
+                .opacity(0)
+                Image(systemName: "hand.thumbsup")
+                    .font(.system(size: 35))
             }
-            
+            .popover(isPresented: $attributionsPopover) {
+                AttributionsView()
+            }
         }
         .foregroundColor(.red)
     }

@@ -59,7 +59,7 @@ struct PizzasView: View {
                             .frame(width: 165.0)
                             Button(action: {
                                 print("\(pizza.name) added to order. ")
-                                let addedPizza = OrderItem(type: .pizza, price:     pizza.prices[chosenSize] ?? 0, details: "\(chosenSize) \(pizza.name)")
+                                let addedPizza = OrderItem(type: .pizza, price:     pizza.prices[chosenSize] ?? 0, details: "\(pizza.name)")
                                 addToOrder(addedItem: addedPizza)
                             }) {
                                 Text("Add to order")

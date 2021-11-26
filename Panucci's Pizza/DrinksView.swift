@@ -57,7 +57,7 @@ struct DrinksView: View {
                             .frame(width: 165.0)
                             Button(action: {
                                 print("\(drink.name) added to order. ")
-                                let addedDrink = OrderItem(type: .drink, price: 0, details: "\(chosenPrice)")
+                                let addedDrink = OrderItem(type: .drink, price: drink.prices[chosenPrice] ?? 0, details: "\(drink.name)")
                                 addToOrder(addedItem: addedDrink)
                             }) {
                                 Text("Add to order")

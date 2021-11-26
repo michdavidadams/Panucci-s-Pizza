@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 // MARK: - Custom Pizza Options
-let sizeOptions = ["small", "medium", "large", "extraLarge"]
+let sizeOptions: [String: Int] = ["small": 8, "medium": 9, "large": 10, "extraLarge": 11]
 let crustOptions = ["thin", "deep dish", "pan", "cheese-filled"]
 let toppingOptions = ["cheese", "pepperoni", "sausage", "ham", "olives", "mushrooms", "bell peppers", "pineapple", "nothing"]
 

@@ -19,6 +19,7 @@ struct CheckoutView: View {
     
     // Is the order completed?
     @State var orderCompleted = false
+    @State var order = customerOrder
     
     var body: some View {
         ScrollView {
@@ -33,8 +34,8 @@ struct CheckoutView: View {
                         Spacer()
                         VStack {
                             Spacer()
-                            ForEach(customerOrder.addedItems.indices, id: \.self) { index in
-                                Text("\(String(describing: customerOrder.addedItems[index]!.details)): $\(String(describing: customerOrder.addedItems[index]!.price))")
+                            ForEach(order.addedItems.indices, id: \.self) { index in
+                                Text("\(String(describing: order.addedItems[index]!.details)): $\(String(describing: order.addedItems[index]!.price))")
                             }
                         }
                         

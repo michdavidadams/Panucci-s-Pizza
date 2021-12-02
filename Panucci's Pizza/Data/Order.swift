@@ -43,3 +43,6 @@ public func addToOrder(addedItem: OrderItem) {
 // Customer order
 public var customerOrder = Order(addedItems: [], orderTotal: 0, payWithCash: true, pickup: true)
 
+public class OrderCompleted: ObservableObject {
+    @Published var orderCompleted = false
+}

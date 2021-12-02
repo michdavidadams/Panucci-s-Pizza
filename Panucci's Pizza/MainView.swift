@@ -23,6 +23,7 @@ struct MainView: View {
         // If user is logged in, display the menu. Otherwise, display the log in screen.
         if loggedIn == true {
             MenuView()
+                .transition(.opacity.animation(.easeInOut(duration: 0.5)))
         } else {
             VStack {
                 Text("🍕 Panucci's Pizza")
@@ -36,9 +37,7 @@ struct MainView: View {
                     TextField("Full Name", text: $fullName)
                         .frame(width: 150, alignment: .center)
                         .textFieldStyle(.roundedBorder)
-                        .toolbar {
-                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Placeholder")/*@END_MENU_TOKEN@*/
-                        }
+                    
                     // Text field for the user to enter their phone number
                     TextField("Phone Number", text: $phoneNumber)
                         .frame(width: 150, alignment: .center)
@@ -60,6 +59,7 @@ struct MainView: View {
             }
             .padding()
             .frame(minWidth: 100, minHeight: 100, alignment: .center)
+            .transition(.opacity.animation(.easeOut(duration: 0.5)))
         }
     }
 }

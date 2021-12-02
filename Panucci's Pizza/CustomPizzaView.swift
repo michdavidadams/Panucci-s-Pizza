@@ -123,8 +123,8 @@ struct CustomPizzaView: View {
                 // Button that will create arrays of 4 chosen toppings and will create a Build-A-Pizza containing the array, along with the chosen crust and size
                 Button(action: {
                     // Creates a custom pizza
-                    let allChosenToppings = [chosenToppingOne, chosenToppingTwo, chosenToppingThree, chosenToppingFour]
-                    let customPizza = OrderItem(type: .customPizza, price: sizeOptions[chosenSize] ?? 8, details: "Size: \(chosenSize), Crust: \(chosenCrust), Toppings: \(allChosenToppings)")
+                    let allChosenToppings = "\(chosenToppingOne),  \(chosenToppingTwo),  \(chosenToppingThree),  \(chosenToppingFour)"
+                    let customPizza = OrderItem(type: .customPizza, price: sizeOptions[chosenSize] ?? 8, details: "Custom Pizza: \(chosenSize), \(chosenCrust), \(allChosenToppings)")
                     // Adds custom pizza to order
                     addToOrder(addedItem: customPizza)
                     
@@ -136,6 +136,7 @@ struct CustomPizzaView: View {
         }
     }
 }
+
 
 struct CustomPizzaView_Previews: PreviewProvider {
     static var previews: some View {

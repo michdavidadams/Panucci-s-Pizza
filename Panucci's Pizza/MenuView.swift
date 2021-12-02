@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MenuView: View {
     
+    
     var body: some View {
             // Tab view containing each menu section
             TabView {
